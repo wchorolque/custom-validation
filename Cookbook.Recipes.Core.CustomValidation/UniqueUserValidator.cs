@@ -1,6 +1,6 @@
 using System;
 using System.ComponentModel.DataAnnotations;
-//using Cookbook.Recipes.Core.CustomValidation.MessageRepository;
+using Cookbook.Recipes.Core.CustomValidation.MessageRepository;
 using Cookbook.Recipes.Core.Data.Repository;
 
 namespace Cookbook.Recipes.Core.CustomValidation

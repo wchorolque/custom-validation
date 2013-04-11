@@ -28,6 +28,10 @@ namespace CustomValidationApp
             this.btnOK.Click += new EventHandler (btnOK_Click);
         }
 
+        ~Register ()
+        {
+        }
+
         public void InitializeComponent ()
         {
             label = new Label ();

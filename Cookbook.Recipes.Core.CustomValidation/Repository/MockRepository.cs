@@ -6,19 +6,13 @@ namespace Cookbook.Recipes.Core.Data.Repository
 {
     public class MockRepository : IRepository
     {
+        #region Variables
+        private static List<User> _users;
+        #endregion
+
         public MockRepository ()
         {
             _users = new List<User> ();
-            _users.Add (new User () { 
-                UserName = "wayne27", 
-                DateOfBirth = new DateTime(1950, 9, 27), 
-                Password = "knight"
-            });
-            _users.Add (new User () {
-                UserName = "wayne47",
-                DateOfBirth = new DateTime(1955, 9, 27),
-                Password = "justice"
-            });
         }
 
         #region IRepository Members
@@ -41,10 +35,6 @@ namespace Cookbook.Recipes.Core.Data.Repository
 
             return !exists;
         }
-        #endregion
-
-        #region Variables
-        private static List<User> _users;
         #endregion
     }
 }

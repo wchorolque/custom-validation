@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<messages>
+    <en>
+        <message key="not_unique_user">User name is not unique</message>
+    </en>
+    <fr>
+        <message key="not_unique_user">Nom d'utilisateur n'est pas unique</message> 
+    </fr>
+</messages>
+
