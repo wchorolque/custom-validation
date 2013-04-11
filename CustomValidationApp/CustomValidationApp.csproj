@@ -49,9 +49,11 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
-    <EmbeddedResource Include="images\Grant Table.jpg">
-      <DeployService-Deploy>True</DeployService-Deploy>
-      <LogicalName>Logo</LogicalName>
+    <Folder Include="images\" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="images\logo.jpg">
+      <LogicalName>CustomValidationApp.logo</LogicalName>
     </EmbeddedResource>
   </ItemGroup>
 </Project>
