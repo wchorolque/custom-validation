@@ -6,5 +6,8 @@
     <fr>
         <message key="not_unique_user">Nom d'utilisateur n'est pas unique</message> 
     </fr>
+    <es>
+        <message key="not_unique_user">El nombre del Usuario no es unico</message>
+    </es>
 </messages>
 

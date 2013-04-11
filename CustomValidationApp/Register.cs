@@ -1,9 +1,11 @@
 using System;
 using System.Collections.Generic;
-using System.Drawing;
-using System.Windows.Forms;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
+using System.Drawing;
+using System.Globalization;
+using System.Threading;
+using System.Windows.Forms;
 using Cookbook.Recipes.Core.CustomValidation;
 using Cookbook.Recipes.Core.Data.Repository;
 
@@ -14,6 +16,7 @@ namespace CustomValidationApp
         Label label;
         TextBox txtUsername;
         Button btnOK;
+        ComboBox cmbLocale;
 
         public Register ()
         {
@@ -22,10 +25,12 @@ namespace CustomValidationApp
             this.Icon = Icon.FromHandle (logo.GetHicon ());
 
             InitializeComponent ();
+
             //Bitmap bmp = WindowsFormsApplication1.Properties.Resources.AppLogo;
             //this.Icon = Icon.FromHandle(bmp.GetHicon());
             this.StartPosition = FormStartPosition.CenterScreen;
             this.btnOK.Click += new EventHandler (btnOK_Click);
+            this.cmbLocale.Click += new EventHandler (cmbLocale_SelectedIndexChanged);
         }
 
         ~Register ()
@@ -43,12 +48,20 @@ namespace CustomValidationApp
             txtUsername.Size = new Size (100, 25);
             txtUsername.Location = new Point (120, 20);
 
+            cmbLocale = new ComboBox ();
+            cmbLocale.Location = new Point (100, 50);
+            cmbLocale.Items.Add ("es-ES");
+            cmbLocale.Items.Add ("en-EN");
+            cmbLocale.Items.Add ("fr-FR");
+            cmbLocale.SelectedIndex = 0;
+
             btnOK = new Button ();
             btnOK.Text = "OK";
-            btnOK.Location = new Point (20, 50);
+            btnOK.Location = new Point (20, 80);
 
             this.Controls.Add (label);
             this.Controls.Add (txtUsername);
+            this.Controls.Add (cmbLocale);
             this.Controls.Add (btnOK);
         }
 
@@ -71,6 +84,13 @@ namespace CustomValidationApp
                 repository.AddUser (user);
                 MessageBox.Show ("New user added");
             }
+        }
+
+        void cmbLocale_SelectedIndexChanged (object sender, EventArgs e)
+        {
+            string locale = cmbLocale.SelectedItem.ToString ();
+            Thread.CurrentThread.CurrentCulture = new CultureInfo (locale);
+            MessageBox.Show (locale);
         }
     }
 }

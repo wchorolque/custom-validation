@@ -22,9 +22,6 @@ namespace Cookbook.Recipes.Core.CustomValidation.MessageRepository
             return dictionary;
         }
         #endregion
-        public XmlMessageRepository ()
-        {
-        }
     }
 }
 

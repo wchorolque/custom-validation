@@ -8,7 +8,7 @@ namespace Cookbook.Recipes.Core.CustomValidation
     public class User
     {
         #region Propiedades
-        [UniqueUserValidator(ErrorMessage="User name already exists")]
+        [UniqueUserValidator(ErrorMessage="not_unique_user")]
         public String UserName { get; set; }
         public DateTime DateOfBirth { get; set; }
         public String Password { get; set; }
