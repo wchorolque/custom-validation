@@ -17,6 +17,12 @@ namespace CookBook.Recipes.Core.DefectTracker.Attributes
         public string Comments { get; set; }
         #endregion
 
+        #region Constructores
+        public DefectTrackerAttribute ()
+        {
+            
+        }
+
         public DefectTrackerAttribute (int defectID, string resolvedBy, string resolvedOn, 
                                        string comments = "")
         {
@@ -25,6 +31,7 @@ namespace CookBook.Recipes.Core.DefectTracker.Attributes
             this.ResolvedOn = resolvedOn;
             this.Comments = comments;
         }
+        #endregion
     }
 }
 

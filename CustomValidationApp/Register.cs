@@ -5,6 +5,7 @@ using System.ComponentModel.DataAnnotations;
 using System.Drawing;
 using System.Globalization;
 using System.Threading;
+using System.Reflection;
 using System.Windows.Forms;
 using Cookbook.Recipes.Core.CustomValidation;
 using Cookbook.Recipes.Core.Data.Repository;
@@ -13,10 +14,10 @@ namespace CustomValidationApp
 {
     public class Register : Form
     {
-        Label label;
-        TextBox txtUsername;
-        Button btnOK;
-        ComboBox cmbLocale;
+        System.Windows.Forms.Label label;
+        System.Windows.Forms.TextBox txtUsername;
+        System.Windows.Forms.Button btnOK;
+        System.Windows.Forms.ComboBox cmbLocale;
 
         public Register ()
         {
@@ -39,26 +40,29 @@ namespace CustomValidationApp
 
         public void InitializeComponent ()
         {
-            label = new Label ();
+            label = new System.Windows.Forms.Label ();
             label.Text = "User Name";
-            label.AutoSize = true;
-            label.Location = new Point (20, 20);
+            label.AutoSize = false;
+            label.TextAlign = ContentAlignment.MiddleRight;
+            label.Size = new System.Drawing.Size (100, 25);
+            label.Location = new System.Drawing.Point (20, 20);
 
-            txtUsername = new TextBox ();
-            txtUsername.Size = new Size (100, 25);
-            txtUsername.Location = new Point (120, 20);
+            txtUsername = new System.Windows.Forms.TextBox ();
+            txtUsername.Size = new  System.Drawing.Size (130, 25);
+            txtUsername.Location = new System.Drawing.Point (130, 20);
 
-            cmbLocale = new ComboBox ();
-            cmbLocale.Location = new Point (100, 50);
+            cmbLocale = new System.Windows.Forms.ComboBox ();
+            cmbLocale.Location = new System.Drawing.Point (130, 50);
+            cmbLocale.Size = new System.Drawing.Size (100, 30);
             cmbLocale.Items.Add ("es-ES");
             cmbLocale.Items.Add ("es-BO");
             cmbLocale.Items.Add ("en-US");
             cmbLocale.Items.Add ("fr-FR");
             cmbLocale.SelectedIndex = 0;
 
-            btnOK = new Button ();
+            btnOK = new System.Windows.Forms.Button ();
             btnOK.Text = "OK";
-            btnOK.Location = new Point (20, 80);
+            btnOK.Location = new System.Drawing.Point (130, 80);
 
             this.Controls.Add (label);
             this.Controls.Add (txtUsername);
