@@ -51,7 +51,8 @@ namespace CustomValidationApp
             cmbLocale = new ComboBox ();
             cmbLocale.Location = new Point (100, 50);
             cmbLocale.Items.Add ("es-ES");
-            cmbLocale.Items.Add ("en-EN");
+            cmbLocale.Items.Add ("es-BO");
+            cmbLocale.Items.Add ("en-US");
             cmbLocale.Items.Add ("fr-FR");
             cmbLocale.SelectedIndex = 0;
 
@@ -90,7 +91,9 @@ namespace CustomValidationApp
         {
             string locale = cmbLocale.SelectedItem.ToString ();
             Thread.CurrentThread.CurrentCulture = new CultureInfo (locale);
-            MessageBox.Show (locale);
+
+            string iso_locale = Thread.CurrentThread.CurrentCulture.TwoLetterISOLanguageName;
+            MessageBox.Show (locale + ":" + iso_locale);
         }
     }
 }
